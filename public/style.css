@@ -1,0 +1,206 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+.dragon-bg {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    perspective: 60px;
+
+    background-image: url('./sky.png');
+    background-color: aqua;
+}
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+#dragon-head {
+    transform: translateZ(-58px) translateY(-60px) translateX(-150px) scale(0.55) rotateY(1deg) rotateZ(-53deg) rotateX(-0.4deg);
+    padding-top: 100vh;
+    animation-name: dragonhead;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#title-txt {
+    transform: translateZ(-40px) translateX(-380px) scale(4) rotateY(5deg) rotateZ(5deg);
+    text-align: center;
+
+    color: white;
+
+    font-family: sans-serif;
+    font-size: 64px;
+
+    animation-name: climb;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#tail-fg {
+    transform: translateZ(-20px) translateY(220px) translateX(-600px) rotateY(-1.5deg);
+}
+
+#tail-bg {
+    transform: translateZ(-60px) translateY(300px) translateX(700px) rotateY(-6deg) rotateZ(-10deg);
+    opacity: 0.5;
+}
+
+#tail-fg, #dragon-head, #tail-bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+}
+
+#cloud-1 {
+    transform: translateZ(-60px) translateY(-300px) translateX(-600px);
+}
+
+#cloud-2 {
+    transform: translateZ(-30px) translateY(-150px) translateX(1100px);
+}
+
+#cloud-3 {
+    transform: translateZ(-10px) translateY(-240px) translateX(-140px);
+}
+
+section {
+    font-size: 2rem;
+    padding: 2rem;
+    padding-bottom: 120vh;
+    background-color: white;
+}
+
+.weather {
+    display: grid;
+    text-align: center;
+}
+
+#coords {
+    color: rgb(0, 161, 135);
+    margin-top: 20px;
+}
+
+#weather-btn{
+    width: 20%;
+    padding: 10px;
+    color: white;
+    background-color: rgb(43, 226, 186);
+    font-size: 20px;
+    margin-top: 20px;
+    border-style: none;
+    border-radius: 20px;
+}
+
+#weather-btn:hover {
+    animation-duration: 1s;
+    animation-name: colorshift;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorshift {
+    0% {
+        background-color: rgb(43, 226, 186);
+    }
+    50% {
+        background-color: rgb(38, 179, 184);
+    }
+    0% {
+        background-color: rgb(43, 226, 186);
+    }
+}
+
+@keyframes climb {
+    0% {
+        font-size: 64px;
+    }
+    50% {
+        font-size: 70px;
+    }
+    0% {
+        font-size: 64px;
+    }
+}
+
+@keyframes dragonhead {
+    0% {
+        transform: translateZ(-58px) translateY(-60px) translateX(-150px) scale(0.55) rotateY(1deg) rotateZ(-53deg) rotateX(-0.4deg);
+    }
+    50% {
+        transform: translateZ(-58px) translateY(-60px) translateX(-150px) scale(0.55) rotateY(1deg) rotateZ(-50deg) rotateX(-0.4deg);
+    }
+    0% {
+        transform: translateZ(-58px) translateY(-60px) translateX(-150px) scale(0.55) rotateY(1deg) rotateZ(-53deg) rotateX(-0.4deg);
+    }
+}
+
+#desc {
+    color: rgb(85, 85, 85);
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.chat-box {
+    margin-left: auto;
+}
+
+.msgs {
+    height: 505px;
+    width: 400px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    background-color: rgb(224, 224, 224);
+}
+
+.msgs > P {
+    margin-left: 10px;
+    font-size: medium;
+}
+
+.msg-form {
+    display: grid;
+}
+
+#text-field {
+    width: 390px;
+    height: 50px;
+    margin-top: 10px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 5px;
+}
+
+#send-btn {
+    width: 120px;
+    background-color: rgb(43, 226, 186);
+    color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+#send-btn:hover {
+    animation-duration: 1s;
+    animation-name: colorshift;
+    animation-iteration-count: infinite;
+}
+
+.game-sect {
+    display: flex;
+}
+
+.map-view {
+    height: 600px;
+    width: 850px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    background-color: rgb(122, 228, 255);
+}
